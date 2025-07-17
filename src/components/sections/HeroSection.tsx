@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AnimatedAvatar } from "@/components/ui/AnimatedAvatar";
 
 export function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -25,7 +26,7 @@ export function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6">
       {/* Interactive Aurora Glow following cursor */}
       <div
         className="fixed pointer-events-none z-10 w-96 h-96 rounded-full opacity-20 transition-all duration-300 ease-out"
@@ -37,15 +38,10 @@ export function HeroSection() {
         }}
       />
 
-      <div className="relative z-20 text-center max-w-4xl mx-auto px-6">
-        {/* Avatar/Logo placeholder */}
-        <div className={`relative mb-8 transition-all duration-1000 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
-          <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-aurora-cyan via-aurora-lavender to-aurora-green p-1 animate-pulse">
-            <div className="w-full h-full rounded-full bg-cosmic-blue flex items-center justify-center">
-              <span className="text-4xl font-bold text-aurora-cyan">SS</span>
-            </div>
-          </div>
-          <div className="absolute inset-0 w-32 h-32 mx-auto rounded-full bg-aurora-cyan/20 animate-ping" />
+      <div className="relative z-20 text-center max-w-4xl mx-auto w-full">
+        {/* Animated Avatar */}
+        <div className={`mb-8 transition-all duration-1000 ${isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+          <AnimatedAvatar />
         </div>
 
         {/* Main heading with typewriter effect */}

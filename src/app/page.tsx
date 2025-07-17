@@ -10,7 +10,7 @@ import { AchievementsSection } from "@/components/sections/AchievementsSection";
 import { ResearchSection } from "@/components/sections/ResearchSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { Navigation } from "@/components/ui/Navigation";
-import { AuroraBackground } from "@/components/ui/AuroraBackground";
+import { AuroraThreeBackground } from "@/components/ui/AuroraThreeBackground";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -38,7 +38,7 @@ export default function Portfolio() {
 
   return (
     <main className="relative min-h-screen">
-      <AuroraBackground />
+      <AuroraThreeBackground />
       <Navigation activeSection={activeSection} />
       
       <div className="relative z-10">
